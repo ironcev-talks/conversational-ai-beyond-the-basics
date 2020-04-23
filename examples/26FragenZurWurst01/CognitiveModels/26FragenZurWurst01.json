@@ -1,0 +1,441 @@
+{
+  "luis_schema_version": "4.0.0",
+  "versionId": "0.1",
+  "name": "26 Fragen zur Wurst 01",
+  "desc": "",
+  "culture": "de-de",
+  "tokenizerVersion": "1.0.2",
+  "intents": [
+    {
+      "name": "ConfirmOrder"
+    },
+    {
+      "name": "DeclineOrder"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "SpecifyOrder"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "BreadKind",
+      "subLists": [
+        {
+          "canonicalForm": "Schwoazbrot",
+          "list": [
+            "brot",
+            "schwarzes brot"
+          ]
+        },
+        {
+          "canonicalForm": "Scherzl",
+          "list": []
+        },
+        {
+          "canonicalForm": "SemmÃ¶",
+          "list": [
+            "semmel"
+          ]
+        },
+        {
+          "canonicalForm": "SoizgebÃ¤ck",
+          "list": [
+            "salzgebÃ¤ck"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "CutKind",
+      "subLists": [
+        {
+          "canonicalForm": "Aufschneiden",
+          "list": [
+            "aufgeschnitten",
+            "geschnitten",
+            "gschnitten"
+          ]
+        },
+        {
+          "canonicalForm": "Zwa HÃ¶ften",
+          "list": [
+            "hÃ¶ften",
+            "helften",
+            "helfte",
+            "zwei helften",
+            "zwa helften",
+            "zwo helften",
+            "zwei helfte",
+            "zwa helfte",
+            "zwo helfte",
+            "zwei hÃ¶ften",
+            "zwo hÃ¶ften",
+            "zwa hÃ¶ften"
+          ]
+        },
+        {
+          "canonicalForm": "Im Gonzn",
+          "list": [
+            "im gonzn",
+            "in gonzn",
+            "gonz",
+            "im ganzen",
+            "in ganzen",
+            "ganz"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Sauce",
+      "subLists": [
+        {
+          "canonicalForm": "Senf",
+          "list": []
+        },
+        {
+          "canonicalForm": "Ketchup",
+          "list": []
+        },
+        {
+          "canonicalForm": "Beides",
+          "list": [
+            "beide",
+            "beide sauce",
+            "gemischt"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "SaucePosition",
+      "subLists": [
+        {
+          "canonicalForm": "Drauf",
+          "list": [
+            "Darauf"
+          ]
+        },
+        {
+          "canonicalForm": "Daneben",
+          "list": [
+            "neben"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "SauceTaste",
+      "subLists": [
+        {
+          "canonicalForm": "SiaÃŸ",
+          "list": [
+            "sÃ¼ÃŸ",
+            "sÃ¼ss",
+            "siass"
+          ]
+        },
+        {
+          "canonicalForm": "Schoaf",
+          "list": [
+            "scharf"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "SausageKind",
+      "subLists": [
+        {
+          "canonicalForm": "Woidvierdler",
+          "list": []
+        },
+        {
+          "canonicalForm": "Buren",
+          "list": []
+        },
+        {
+          "canonicalForm": "Schoafe",
+          "list": [
+            "schafe"
+          ]
+        },
+        {
+          "canonicalForm": "KÃ¤sekrainer",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Side",
+      "subLists": [
+        {
+          "canonicalForm": "Gurkel",
+          "list": [
+            "gurken",
+            "gurke"
+          ]
+        },
+        {
+          "canonicalForm": "Pfeffaroni",
+          "list": []
+        },
+        {
+          "canonicalForm": "Keine Beilage",
+          "list": [
+            "keine gurken",
+            "keine pfeffaroni",
+            "ohne beilagen",
+            "ohne beilage",
+            "keine beilagen",
+            "ohne gurkel",
+            "ohne gurken",
+            "ohne pfeffaroni"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "als ich kind war habe ich gerne currywurst gegessen",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bitte eine currywurst",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "buren mit senf und ketchup in gonzn mit gurkel",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "damals gab es im supermarkt nix",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "die sauce mÃ¶chte ich Ã¤ndern",
+      "intent": "DeclineOrder",
+      "entities": []
+    },
+    {
+      "text": "eine buren mit ketchup aufgeschnitten mit brot und dazu bitte gurken",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "eine buren wurst mit senf und ketchup ohne beilage",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "eine currywurst",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "eine currywurst bitte",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "eine currywurst mit senf ohne beilagen",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "eine schoafe geschnitten mit senf und gurken",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "einiges mÃ¶chte ich Ã¤ndern",
+      "intent": "DeclineOrder",
+      "entities": []
+    },
+    {
+      "text": "guat",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "gut",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "ich kaufe ein auto",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ich mÃ¶chte ein hotel reservieren",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ich mÃ¶chte gern eine buren mit ketchup in gonzn ohne beilage",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "ja",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "ja bitte",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "ja passt",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "ja sicher",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "ja super",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "jo",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "jo bitte",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "jo passt",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "jo super",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "kÃ¤sekrainer",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "kÃ¤sekrainer bitte",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "kÃ¤sekrainer in zwa hÃ¶ften mit senf",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "klingt gut",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "meine mutter mag senf Ã¼berhaupt nicht",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "morgen gehe ich laufen und danach schlafen",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "nein",
+      "intent": "DeclineOrder",
+      "entities": []
+    },
+    {
+      "text": "nein ich mÃ¶chte was Ã¤ndern",
+      "intent": "DeclineOrder",
+      "entities": []
+    },
+    {
+      "text": "nein ich mÃ¶chte was anders",
+      "intent": "DeclineOrder",
+      "entities": []
+    },
+    {
+      "text": "nein passt nicht",
+      "intent": "DeclineOrder",
+      "entities": []
+    },
+    {
+      "text": "passt",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "passt perfekt",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "pfeffaroni",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "sauce mÃ¶chte ich Ã¤ndern",
+      "intent": "DeclineOrder",
+      "entities": []
+    },
+    {
+      "text": "schoafe mit ketchup und semmÃ¶ ohne beilagen",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "senf",
+      "intent": "SpecifyOrder",
+      "entities": []
+    },
+    {
+      "text": "super",
+      "intent": "ConfirmOrder",
+      "entities": []
+    },
+    {
+      "text": "was fÃ¼r ein brot ist das",
+      "intent": "None",
+      "entities": []
+    }
+  ],
+  "settings": []
+}
+

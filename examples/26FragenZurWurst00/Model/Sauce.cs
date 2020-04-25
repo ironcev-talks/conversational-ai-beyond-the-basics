@@ -3,7 +3,7 @@ using System;
 
 namespace FragenZurWurst.Model
 {
-    internal enum Sauce
+    public enum Sauce
     {
         Senf,
         Ketchup,

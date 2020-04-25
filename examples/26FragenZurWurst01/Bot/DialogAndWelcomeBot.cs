@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Resources;
 
 namespace FragenZurWurst.Bot
 {
@@ -23,7 +24,7 @@ namespace FragenZurWurst.Bot
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    var reply = MessageFactory.Text("Seas! I bin CurryWursch26, wöltweit da beste Currywurscht-Bot! Ba mia koanst du a gschmackige Currywurscht b'stelln, natiarli mit Senf und oder Ketchup und Gurkerl oder Pfeffaroni.");
+                    var reply = MessageFactory.Text(Resource.InitialGreeting);
 
                     await turnContext.SendActivityAsync(reply, cancellationToken);
 

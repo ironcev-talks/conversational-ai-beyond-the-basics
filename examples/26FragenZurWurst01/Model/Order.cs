@@ -1,4 +1,5 @@
-﻿
+﻿using Resources;
+
 namespace FragenZurWurst.Model
 {
     public class Order
@@ -15,13 +16,13 @@ namespace FragenZurWurst.Model
 
         public string ToOrderSentence()
         {
-            return $"Also, eine {(SausageKind ?? Model.SausageKind.Kaesekrainer).ToOrderSentenceText()}, " +
+            return $"{Resource.OrderSentenceBegin} {(SausageKind ?? Model.SausageKind.Kaesekrainer).ToOrderSentenceText()}, " +
                    $"{(CutKind ?? Model.CutKind.Aufschneiden).ToOrderSentenceText()}, " +
-                   $"mit {(Sauce ?? Model.Sauce.Senf).ToOrderSentenceText()}. " +
-                   $"{(Sauce ?? Model.Sauce.Senf).ToOrderSentenceText()} {(SauceTaste ?? Model.SauceTaste.Schoaf).ToOrderSentenceText()} und {(SaucePosition ?? Model.SaucePosition.Daneben).ToOrderSentenceText()}. " +
-                   $"Dazu {(BreadKind ?? Model.BreadKind.Semmoe).ToOrderSentenceText()} " +
-                   $"{(Side == Model.Side.Nix ? "ohne ana Beiloag." : $"mit {(Side ?? Model.Side.Gurkel).ToOrderSentenceText()}.")} " +
-                   $"Passt's so?";
+                   $"{(Sauce ?? Model.Sauce.Senf).ToOrderSentenceTextDativ()}. " +
+                   $"{(Sauce ?? Model.Sauce.Senf).ToOrderSentenceTextNominativ()} {(SauceTaste ?? Model.SauceTaste.Schoaf).ToOrderSentenceText()} {Resource.OrderSentenceAnd} {(SaucePosition ?? Model.SaucePosition.Daneben).ToOrderSentenceText()}. " +
+                   $"{Resource.OrderSentenceWith} {(BreadKind ?? Model.BreadKind.Semmoe).ToOrderSentenceText()} " +
+                   $"{(Side ?? Model.Side.Gurkel).ToOrderSentenceText()}. " +
+                   $"{Resource.OrderSentenceIsItFineLikeThat}";
         }
 
         public void MergeWith(Order otherOrder)

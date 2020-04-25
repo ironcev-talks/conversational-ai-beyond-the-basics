@@ -3,7 +3,7 @@ using System;
 
 namespace FragenZurWurst.Model
 {
-    internal enum SaucePosition
+    public enum SaucePosition
     {
         Drauf,
         Daneben

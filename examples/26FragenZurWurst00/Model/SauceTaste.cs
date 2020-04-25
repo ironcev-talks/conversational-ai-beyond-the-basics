@@ -3,7 +3,7 @@ using System;
 
 namespace FragenZurWurst.Model
 {
-    internal enum SauceTaste
+    public enum SauceTaste
     {
         Siass,
         Schoaf

@@ -6,6 +6,7 @@ using FragenZurWurst.Model;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Resources;
 
 namespace FragenZurWurst.Dialogs
 {
@@ -41,7 +42,7 @@ namespace FragenZurWurst.Dialogs
 
         private async Task<DialogTurnResult> AskForInitialOrderStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            string question = "Wos meachst du?";
+            string question = Resource.WhatDoYouWantToOrder;
 
             var promptMessage = MessageFactory.Text(question, question, InputHints.ExpectingInput);
             return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
@@ -64,7 +65,7 @@ namespace FragenZurWurst.Dialogs
         {
             var order = await conversationState.GetOrder(stepContext.Context);
 
-            string message = $"Doangschen! Dei {order.SausageKind!.Value.ToDisplayText()} Currywurscht is do. Foilst nu woas bestön mechast soagst'as hoit.";
+            string message = Resource.ThankYouYourOrderIsReady;
 
             var promptMessage = MessageFactory.Text(message, message, InputHints.IgnoringInput);
             await stepContext.Context.SendActivityAsync(promptMessage, cancellationToken);

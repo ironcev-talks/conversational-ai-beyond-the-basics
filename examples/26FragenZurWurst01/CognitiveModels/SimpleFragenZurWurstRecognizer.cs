@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FragenZurWurst.Model;
 using Microsoft.Bot.Builder;
+using Resources;
 
 namespace FragenZurWurst.CognitiveModels
 {
@@ -37,8 +38,8 @@ namespace FragenZurWurst.CognitiveModels
 
             bool IsConfirmOrder()
             {
-                var confirm = new[] { "ja", "jo", "passt", "perfekt", "super", "gut", "guat" };
-                if (confirm.Any(word => input.Contains(word)))
+                var confirm = Resource.ConfirmOrder.Split(',').ToArray();
+                if (confirm.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return true;
 
                 return false;
@@ -46,8 +47,8 @@ namespace FragenZurWurst.CognitiveModels
 
             bool IsDeclineOrder()
             {
-                var decline = new[] { "nein", "ändern", "anders" };
-                if (decline.Any(word => input.Contains(word)))
+                var decline = Resource.DeclineOrder.Split(',').ToArray();
+                if (decline.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return true;
 
                 return false;
@@ -55,20 +56,20 @@ namespace FragenZurWurst.CognitiveModels
 
             SausageKind? ExtractSausageKind()
             {
-                var woidvierdler = new[] { "woidvierdler", "woidvialda", "rauchwuascht", "rauchwiaschtl" };
-                if (woidvierdler.Any(word => input.Contains(word)))
+                var woidvierdler = Resource.SausageKindWoidvierdlerSynonyms.Split(',').ToArray();
+                if (woidvierdler.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return SausageKind.Woidvierdler;
 
-                var buren = new[] { "buren" };
-                if (buren.Any(word => input.Contains(word)))
+                var buren = Resource.SausageKindBurenSynonyms.Split(',').ToArray();
+                if (buren.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return SausageKind.Buren;
 
-                var schoafe = new[] { "schoafe", "schafe" };
-                if (schoafe.Any(word => input.Contains(word)))
+                var schoafe = Resource.SausageKindSchoafeSynonyms.Split(',').ToArray();
+                if (schoafe.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return SausageKind.Schoafe;
 
-                var kaesekrainer = new[] { "käsekrainer" };
-                if (kaesekrainer.Any(word => input.Contains(word)))
+                var kaesekrainer = Resource.SausageKindKaesekrainerSynonyms.Split(',').ToArray();
+                if (kaesekrainer.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return SausageKind.Kaesekrainer;
 
                 return null;
@@ -76,17 +77,21 @@ namespace FragenZurWurst.CognitiveModels
 
             Sauce? ExtractSauce()
             {
-                if (input.Contains("senf") && input.Contains("ketchup"))
+                var senf = Resource.SauceSenfSynonyms.Split(',').ToArray();
+                var ketchup = Resource.SauceKetchupSynonyms.Split(',').ToArray();
+                
+                if (senf.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)) &&
+                    ketchup.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return Sauce.Beides;
 
-                if (input.Contains("senf"))
+                if (senf.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return Sauce.Senf;
 
-                if (input.Contains("ketchup"))
+                if (ketchup.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return Sauce.Ketchup;
 
-                var beides = new[] { "beides", "beide", "beide sauce" };
-                if (beides.Any(word => input.Contains(word)))
+                var beides = Resource.SauceBeidesSynonyms.Split(',').ToArray();
+                if (beides.Any(word => input.Contains(word, System.StringComparison.InvariantCultureIgnoreCase)))
                     return Sauce.Beides;
 
                 return null;
@@ -94,19 +99,19 @@ namespace FragenZurWurst.CognitiveModels
 
             BreadKind? ExtractBreadKind()
             {
-                var schwoazbrot = new[] { "schwoazbrot", "brot", "dunkles brot", "dunkles", "schwarzes" };
+                var schwoazbrot = Resource.BreadKindSchwoazbrotSynonyms.Split(',').ToArray();
                 if (schwoazbrot.Any(word => input.Contains(word)))
                     return BreadKind.Schwoazbrot;
 
-                var scherzl = new[] { "scherzl" };
+                var scherzl = Resource.BreadKindScherzlSynonyms.Split(',').ToArray();
                 if (scherzl.Any(word => input.Contains(word)))
                     return BreadKind.Scherzl;
 
-                var semmoe = new[] { "semmö", "semmel" };
+                var semmoe = Resource.BreadKindSemmoeSynonyms.Split(',').ToArray();
                 if (semmoe.Any(word => input.Contains(word)))
                     return BreadKind.Semmoe;
 
-                var soizgebaeck = new[] { "soizgebäck", "salzgebäck" };
+                var soizgebaeck = Resource.BreadKindSoizgebaeckSynonyms.Split(',').ToArray();
                 if (soizgebaeck.Any(word => input.Contains(word)))
                     return BreadKind.Soizgebaeck;
 

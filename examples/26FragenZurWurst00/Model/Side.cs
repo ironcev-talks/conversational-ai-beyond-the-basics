@@ -3,7 +3,7 @@ using System;
 
 namespace FragenZurWurst.Model
 {
-    internal enum Side
+    public enum Side
     {
         Gurkel,
         Pfeffaroni,

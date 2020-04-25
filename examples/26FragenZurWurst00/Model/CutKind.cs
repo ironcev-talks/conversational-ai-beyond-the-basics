@@ -3,7 +3,7 @@ using System;
 
 namespace FragenZurWurst.Model
 {
-    internal enum CutKind
+    public enum CutKind
     {
         Aufschneiden,
         ZwaHoeften,

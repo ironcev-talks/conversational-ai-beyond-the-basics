@@ -3,7 +3,7 @@ using System;
 
 namespace FragenZurWurst.Model
 {
-    internal enum BreadKind
+    public enum BreadKind
     {
         Schwoazbrot,
         Scherzl,

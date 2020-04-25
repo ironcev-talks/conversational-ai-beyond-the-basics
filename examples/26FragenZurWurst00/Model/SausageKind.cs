@@ -3,7 +3,7 @@ using System;
 
 namespace FragenZurWurst.Model
 {
-    internal enum SausageKind
+    public enum SausageKind
     {
         Woidvierdler,
         Buren,

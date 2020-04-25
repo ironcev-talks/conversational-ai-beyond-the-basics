@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BreadKindScherzl" xml:space="preserve">
+    <value>Scherzl</value>
+  </data>
+  <data name="BreadKindScherzlOrderSentenceText" xml:space="preserve">
+    <value>ein Scherzl</value>
+  </data>
+  <data name="BreadKindScherzlSynonyms" xml:space="preserve">
+    <value>scherzl</value>
+  </data>
+  <data name="BreadKindSchwoazbrot" xml:space="preserve">
+    <value>Schwoazbrot</value>
+  </data>
+  <data name="BreadKindSchwoazbrotOrderSentenceText" xml:space="preserve">
+    <value>ein Schwoazbrot</value>
+  </data>
+  <data name="BreadKindSchwoazbrotSynonyms" xml:space="preserve">
+    <value>schwoazbrot,brot,dunkles brot,dunkles,schwarzes</value>
+  </data>
+  <data name="BreadKindSemmoe" xml:space="preserve">
+    <value>Semmö</value>
+  </data>
+  <data name="BreadKindSemmoeOrderSentenceText" xml:space="preserve">
+    <value>eine Semmö</value>
+  </data>
+  <data name="BreadKindSemmoeSynonyms" xml:space="preserve">
+    <value>semmö,semmel</value>
+  </data>
+  <data name="BreadKindSoizgebaeck" xml:space="preserve">
+    <value>Soizgebäck</value>
+  </data>
+  <data name="BreadKindSoizgebaeckOrderSentenceText" xml:space="preserve">
+    <value>ein Soizgebäck</value>
+  </data>
+  <data name="BreadKindSoizgebaeckSynonyms" xml:space="preserve">
+    <value>soizgebäck,salzgebäck</value>
+  </data>
+  <data name="ConfirmOrder" xml:space="preserve">
+    <value>ja,jo,passt,perfekt,super,gut,guat</value>
+  </data>
+  <data name="CutKindAufschneiden" xml:space="preserve">
+    <value>Aufschneiden</value>
+  </data>
+  <data name="CutKindAufschneidenOrderSentenceText" xml:space="preserve">
+    <value>aufgeschnitten</value>
+  </data>
+  <data name="CutKindAufschneidenSynonyms" xml:space="preserve">
+    <value>aufgeschnitten,geschnitten,gschnitten</value>
+  </data>
+  <data name="CutKindImGonzn" xml:space="preserve">
+    <value>Im Gonzn</value>
+  </data>
+  <data name="CutKindImGonznOrderSentenceText" xml:space="preserve">
+    <value>im Gonzn</value>
+  </data>
+  <data name="CutKindImGonznSynonyms" xml:space="preserve">
+    <value>in gonzn,gonz,im ganzen,in ganzen,ganz</value>
+  </data>
+  <data name="CutKindZwaHoeften" xml:space="preserve">
+    <value>Zwa Höften</value>
+  </data>
+  <data name="CutKindZwaHoeftenOrderSentenceText" xml:space="preserve">
+    <value>in zwa Höften</value>
+  </data>
+  <data name="CutKindZwaHoeftenSynonyms" xml:space="preserve">
+    <value>höften,helften,helfte,zwei helften,zwa helften,zwo helften,zwei helfte,zwa helfte,zwo helfte,zwei höften,zwo höften</value>
+  </data>
+  <data name="DeclineOrder" xml:space="preserve">
+    <value>nein,ändern,anders</value>
+  </data>
+  <data name="IDidNotUnderstandYou" xml:space="preserve">
+    <value>I hob di net goanz verstoandn.</value>
+  </data>
+  <data name="InitialGreeting" xml:space="preserve">
+    <value>Seas! I bin CurryWursch26, wöltweit da beste Currywurscht-Bot! Ba mia koanst du a gschmackige Currywurscht b'stelln, natiarli mit Senf und oder Ketchup und Gurkerl oder Pfeffaroni.</value>
+  </data>
+  <data name="OrderSentenceAnd" xml:space="preserve">
+    <value>und</value>
+  </data>
+  <data name="OrderSentenceBegin" xml:space="preserve">
+    <value>Also, eine</value>
+  </data>
+  <data name="OrderSentenceIsItFineLikeThat" xml:space="preserve">
+    <value>Passt's so?</value>
+  </data>
+  <data name="OrderSentenceWith" xml:space="preserve">
+    <value>Dazu</value>
+  </data>
+  <data name="SauceBeides" xml:space="preserve">
+    <value>Beides</value>
+  </data>
+  <data name="SauceBeidesOrderSentenceTextDativ" xml:space="preserve">
+    <value>mit Senf und Ketchup</value>
+  </data>
+  <data name="SauceBeidesOrderSentenceTextNominativ" xml:space="preserve">
+    <value>Senf und Ketchup</value>
+  </data>
+  <data name="SauceBeidesSynonyms" xml:space="preserve">
+    <value>beide,beide sauce</value>
+  </data>
+  <data name="SauceKetchup" xml:space="preserve">
+    <value>Ketchup</value>
+  </data>
+  <data name="SauceKetchupOrderSentenceTextDativ" xml:space="preserve">
+    <value>mit Ketchup</value>
+  </data>
+  <data name="SauceKetchupOrderSentenceTextNominativ" xml:space="preserve">
+    <value>Ketchup</value>
+  </data>
+  <data name="SauceKetchupSynonyms" xml:space="preserve">
+    <value>ketchup</value>
+  </data>
+  <data name="SaucePositionDaneben" xml:space="preserve">
+    <value>Daneben</value>
+  </data>
+  <data name="SaucePositionDanebenOrderSentenceText" xml:space="preserve">
+    <value>daneben</value>
+  </data>
+  <data name="SaucePositionDanebenSynonyms" xml:space="preserve">
+    <value>neben</value>
+  </data>
+  <data name="SaucePositionDrauf" xml:space="preserve">
+    <value>Drauf</value>
+  </data>
+  <data name="SaucePositionDraufOrderSentenceText" xml:space="preserve">
+    <value>drauf</value>
+  </data>
+  <data name="SaucePositionDraufSynonyms" xml:space="preserve">
+    <value>darauf</value>
+  </data>
+  <data name="SauceSenf" xml:space="preserve">
+    <value>Senf</value>
+  </data>
+  <data name="SauceSenfOrderSentenceTextDativ" xml:space="preserve">
+    <value>mit Senf</value>
+  </data>
+  <data name="SauceSenfOrderSentenceTextNominativ" xml:space="preserve">
+    <value>Senf</value>
+  </data>
+  <data name="SauceSenfSynonyms" xml:space="preserve">
+    <value>senf</value>
+  </data>
+  <data name="SauceTasteSchoaf" xml:space="preserve">
+    <value>Schoaf</value>
+  </data>
+  <data name="SauceTasteSchoafOrderSentenceText" xml:space="preserve">
+    <value>schoaf</value>
+  </data>
+  <data name="SauceTasteSchoafSynonyms" xml:space="preserve">
+    <value>scharf</value>
+  </data>
+  <data name="SauceTasteSiass" xml:space="preserve">
+    <value>Siaß</value>
+  </data>
+  <data name="SauceTasteSiassOrderSentenceText" xml:space="preserve">
+    <value>siaß</value>
+  </data>
+  <data name="SauceTasteSiassSynonyms" xml:space="preserve">
+    <value>süß,süss,siass</value>
+  </data>
+  <data name="SausageKindBuren" xml:space="preserve">
+    <value>Buren</value>
+  </data>
+  <data name="SausageKindBurenOrderSentenceText" xml:space="preserve">
+    <value>Buren</value>
+  </data>
+  <data name="SausageKindBurenSynonyms" xml:space="preserve">
+    <value>buren,burenheidl</value>
+  </data>
+  <data name="SausageKindKaesekrainer" xml:space="preserve">
+    <value>Käsekrainer</value>
+  </data>
+  <data name="SausageKindKaesekrainerOrderSentenceText" xml:space="preserve">
+    <value>Käsekrainer</value>
+  </data>
+  <data name="SausageKindKaesekrainerSynonyms" xml:space="preserve">
+    <value>käsekrainer</value>
+  </data>
+  <data name="SausageKindSchoafe" xml:space="preserve">
+    <value>Schoafe</value>
+  </data>
+  <data name="SausageKindSchoafeOrderSentenceText" xml:space="preserve">
+    <value>Schoafe</value>
+  </data>
+  <data name="SausageKindSchoafeSynonyms" xml:space="preserve">
+    <value>schafe</value>
+  </data>
+  <data name="SausageKindWoidvierdler" xml:space="preserve">
+    <value>Woidvierdler</value>
+  </data>
+  <data name="SausageKindWoidvierdlerOrderSentenceText" xml:space="preserve">
+    <value>Woidvierdler</value>
+  </data>
+  <data name="SausageKindWoidvierdlerSynonyms" xml:space="preserve">
+    <value>woidvierdler,woidvialda,rauchwuascht,rauchwiaschtl</value>
+  </data>
+  <data name="SideGurkel" xml:space="preserve">
+    <value>Gurkel</value>
+  </data>
+  <data name="SideGurkelOrderSentenceText" xml:space="preserve">
+    <value>mit Gurkel</value>
+  </data>
+  <data name="SideGurkelSynonyms" xml:space="preserve">
+    <value>gurken</value>
+  </data>
+  <data name="SideNix" xml:space="preserve">
+    <value>Nix</value>
+  </data>
+  <data name="SideNixOrderSentenceText" xml:space="preserve">
+    <value>ohne ana Beiloag</value>
+  </data>
+  <data name="SideNixSynonyms" xml:space="preserve">
+    <value>nichts,keine,nein</value>
+  </data>
+  <data name="SidePfeffaroni" xml:space="preserve">
+    <value>Pfeffaroni</value>
+  </data>
+  <data name="SidePfeffaroniOrderSentenceText" xml:space="preserve">
+    <value>mit Pfeffaroni</value>
+  </data>
+  <data name="SidePfeffaroniSynonyms" xml:space="preserve">
+    <value>pfeffaroni</value>
+  </data>
+  <data name="ThankYouYourOrderIsReady" xml:space="preserve">
+    <value>Doangschen! Dei Currywurscht is do. Foilst nu woas bestön mechast soagst'as hoit.</value>
+  </data>
+  <data name="WhatDoYouWantToOrder" xml:space="preserve">
+    <value>Wos meachst du?</value>
+  </data>
+  <data name="WhatEleseWouldYouLikeToHave" xml:space="preserve">
+    <value>Woas meachat'ns oanders hob'n?</value>
+  </data>
+  <data name="WhichBread" xml:space="preserve">
+    <value>Wöches Brot?</value>
+  </data>
+  <data name="WhichCutKind" xml:space="preserve">
+    <value>Wie?</value>
+  </data>
+  <data name="WhichSauce" xml:space="preserve">
+    <value>Wöcha Sauce?</value>
+  </data>
+  <data name="WhichSaucePosition" xml:space="preserve">
+    <value>Drauf oder daneben?</value>
+  </data>
+  <data name="WhichSauceTaste" xml:space="preserve">
+    <value>Wöchan?</value>
+  </data>
+  <data name="WhichSausage" xml:space="preserve">
+    <value>Wöcha Wurscht?</value>
+  </data>
+  <data name="WhichSide" xml:space="preserve">
+    <value>Wöcha Beiloag?</value>
+  </data>
+</root>

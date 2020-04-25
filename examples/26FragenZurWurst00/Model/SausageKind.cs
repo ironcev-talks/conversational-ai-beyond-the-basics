@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Resources;
+using System;
 
 namespace FragenZurWurst.Model
 {
@@ -16,23 +17,33 @@ namespace FragenZurWurst.Model
         {
             return sausageKind switch
             {
-                SausageKind.Kaesekrainer => "Käsekrainer",
+                SausageKind.Woidvierdler => Resource.SausageKindWoidvierdler,
+                SausageKind.Buren => Resource.SausageKindBuren,
+                SausageKind.Schoafe => Resource.SausageKindSchoafe,
+                SausageKind.Kaesekrainer => Resource.SausageKindKaesekrainer,
                 _ => sausageKind.ToString()
             };
         }
 
         public static string ToOrderSentenceText(this SausageKind sausageKind)
         {
-            return ToDisplayText(sausageKind);
+            return sausageKind switch
+            {
+                SausageKind.Woidvierdler => Resource.SausageKindWoidvierdlerOrderSentenceText,
+                SausageKind.Buren => Resource.SausageKindBurenOrderSentenceText,
+                SausageKind.Schoafe => Resource.SausageKindSchoafeOrderSentenceText,
+                SausageKind.Kaesekrainer => Resource.SausageKindKaesekrainerOrderSentenceText,
+                _ => sausageKind.ToString()
+            };
         }
 
         public static SausageKind FromDisplayText(string displayText)
         {
-            return displayText switch
-            {
-                "Käsekrainer" => SausageKind.Kaesekrainer,
-                _ => Enum.Parse<SausageKind>(displayText, true)
-            };
+            if (displayText == Resource.SausageKindWoidvierdler) return SausageKind.Woidvierdler;
+            if (displayText == Resource.SausageKindBuren) return SausageKind.Buren;
+            if (displayText == Resource.SausageKindSchoafe) return SausageKind.Schoafe;
+            if (displayText == Resource.SausageKindKaesekrainer) return SausageKind.Kaesekrainer;
+            return Enum.Parse<SausageKind>(displayText, true);
         }
     }
 }

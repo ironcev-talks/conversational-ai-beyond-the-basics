@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using FragenZurWurst.Bot;
@@ -7,13 +8,12 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Choices;
 using Microsoft.Recognizers.Text;
+using Resources;
 
 namespace FragenZurWurst.Dialogs
 {
     public class MainDialog : ComponentDialog
     {
-        private const string IDidNotUnderstandYou = "I hob di net goanz verstoandn.";
-
         private readonly ConversationState conversationState;
 
         public MainDialog(ConversationState conversationState)
@@ -57,17 +57,17 @@ namespace FragenZurWurst.Dialogs
             {
                 var choices = new List<Choice>
                 {
-                    new Choice { Value = SausageKind.Woidvierdler.ToDisplayText(), Synonyms = new List<string> { "woidvierdler", "woidvialda", "rauchwuascht", "rauchwiaschtl" } },
-                    new Choice { Value = SausageKind.Buren.ToDisplayText(), Synonyms = new List<string> { "burenheidl" } },
-                    new Choice { Value = SausageKind.Schoafe.ToDisplayText(), Synonyms = new List<string> { "schafe" } },
-                    new Choice { Value = SausageKind.Kaesekrainer.ToDisplayText(), Synonyms = new List<string> { "käsekrainer" } }
+                    new Choice { Value = SausageKind.Woidvierdler.ToDisplayText(), Synonyms = Resource.SausageKindWoidvierdlerSynonyms.Split(',').ToList() },
+                    new Choice { Value = SausageKind.Buren.ToDisplayText(), Synonyms = Resource.SausageKindBurenSynonyms.Split(',').ToList() },
+                    new Choice { Value = SausageKind.Schoafe.ToDisplayText(), Synonyms = Resource.SausageKindSchoafeSynonyms.Split(',').ToList() },
+                    new Choice { Value = SausageKind.Kaesekrainer.ToDisplayText(), Synonyms = Resource.SausageKindKaesekrainerSynonyms.Split(',').ToList() }
                 };
 
                 return new PromptOptions
                 {
-                    Prompt = MessageFactory.Text("Wöcha Wurscht?"),
+                    Prompt = MessageFactory.Text(Resource.WhichSausage),
                     Choices = choices,
-                    RetryPrompt = MessageFactory.Text(IDidNotUnderstandYou)
+                    RetryPrompt = MessageFactory.Text(Resource.IDidNotUnderstandYou)
                 };
             }
         }
@@ -84,16 +84,16 @@ namespace FragenZurWurst.Dialogs
             {
                 var choices = new List<Choice>
                 {
-                    new Choice { Value = CutKind.Aufschneiden.ToDisplayText(), Synonyms = new List<string> { "aufgeschnitten", "geschnitten", "gschnitten" } },
-                    new Choice { Value = CutKind.ZwaHoeften.ToDisplayText(), Synonyms = new List<string> { "höften", "helften", "helfte", "zwei helften", "zwa helften", "zwo helften", "zwei helfte", "zwa helfte", "zwo helfte", "zwei höften", "zwo höften" } },
-                    new Choice { Value = CutKind.ImGonzn.ToDisplayText(), Synonyms = new List<string> { "in gonzn", "gonz", "im ganzen", "in ganzen", "ganz" } }
+                    new Choice { Value = CutKind.Aufschneiden.ToDisplayText(), Synonyms = Resource.CutKindAufschneidenSynonyms.Split(',').ToList() },
+                    new Choice { Value = CutKind.ZwaHoeften.ToDisplayText(), Synonyms = Resource.CutKindZwaHoeftenSynonyms.Split(',').ToList() },
+                    new Choice { Value = CutKind.ImGonzn.ToDisplayText(), Synonyms = Resource.CutKindImGonznSynonyms.Split(',').ToList() }
                 };
 
                 return new PromptOptions
                 {
-                    Prompt = MessageFactory.Text("Wie?"),
+                    Prompt = MessageFactory.Text(Resource.WhichCutKind),
                     Choices = choices,
-                    RetryPrompt = MessageFactory.Text(IDidNotUnderstandYou)
+                    RetryPrompt = MessageFactory.Text(Resource.IDidNotUnderstandYou)
                 };
             }
         }
@@ -111,15 +111,15 @@ namespace FragenZurWurst.Dialogs
                 var choices = new List<Choice>
                 {
                     new Choice { Value = Sauce.Senf.ToDisplayText() },
-                    new Choice { Value = Sauce.Ketchup.ToDisplayText() },
-                    new Choice { Value = Sauce.Beides.ToDisplayText(), Synonyms = new List<string> { "beide", "beide sauce" } }
+                    new Choice { Value = Sauce.Ketchup.ToDisplayText(), Synonyms = Resource.SauceKetchupSynonyms.Split(',').ToList() },
+                    new Choice { Value = Sauce.Beides.ToDisplayText(), Synonyms = Resource.SauceBeidesSynonyms.Split(',').ToList() }
                 };
 
                 return new PromptOptions
                 {
-                    Prompt = MessageFactory.Text("Wöcha Sauce?"),
+                    Prompt = MessageFactory.Text(Resource.WhichSauce),
                     Choices = choices,
-                    RetryPrompt = MessageFactory.Text(IDidNotUnderstandYou)
+                    RetryPrompt = MessageFactory.Text(Resource.IDidNotUnderstandYou)
                 };
             }
         }
@@ -136,15 +136,15 @@ namespace FragenZurWurst.Dialogs
             {
                 var choices = new List<Choice>
                 {
-                    new Choice { Value = SauceTaste.Siass.ToDisplayText(), Synonyms = new List<string> { "süß", "süss", "siass" } },
-                    new Choice { Value = SauceTaste.Schoaf.ToDisplayText(), Synonyms = new List<string> { "scharf" } }
+                    new Choice { Value = SauceTaste.Siass.ToDisplayText(), Synonyms = Resource.SauceTasteSiassSynonyms.Split(',').ToList() },
+                    new Choice { Value = SauceTaste.Schoaf.ToDisplayText(), Synonyms = Resource.SauceTasteSchoafSynonyms.Split(',').ToList() }
                 };
 
                 return new PromptOptions
                 {
-                    Prompt = MessageFactory.Text("Wöchan?"),
+                    Prompt = MessageFactory.Text(Resource.WhichSauceTaste),
                     Choices = choices,
-                    RetryPrompt = MessageFactory.Text(IDidNotUnderstandYou)
+                    RetryPrompt = MessageFactory.Text(Resource.IDidNotUnderstandYou)
                 };
             }
         }
@@ -161,15 +161,15 @@ namespace FragenZurWurst.Dialogs
             {
                 var choices = new List<Choice>
                 {
-                    new Choice { Value = SaucePosition.Drauf.ToDisplayText(), Synonyms = new List<string> { "darauf" } },
-                    new Choice { Value = SaucePosition.Daneben.ToDisplayText(), Synonyms = new List<string> { "neben" } }
+                    new Choice { Value = SaucePosition.Drauf.ToDisplayText(), Synonyms = Resource.SaucePositionDraufSynonyms.Split(',').ToList() },
+                    new Choice { Value = SaucePosition.Daneben.ToDisplayText(), Synonyms = Resource.SaucePositionDanebenSynonyms.Split(',').ToList() }
                 };
 
                 return new PromptOptions
                 {
-                    Prompt = MessageFactory.Text("Drauf oder daneben?"),
+                    Prompt = MessageFactory.Text(Resource.WhichSaucePosition),
                     Choices = choices,
-                    RetryPrompt = MessageFactory.Text(IDidNotUnderstandYou)
+                    RetryPrompt = MessageFactory.Text(Resource.IDidNotUnderstandYou)
                 };
             }
         }
@@ -186,17 +186,17 @@ namespace FragenZurWurst.Dialogs
             {
                 var choices = new List<Choice>
                 {
-                    new Choice { Value = BreadKind.Schwoazbrot.ToDisplayText(), Synonyms = new List<string> { "brot", "dunkles brot", "dunkles", "schwarzes" } },
-                    new Choice { Value = BreadKind.Scherzl.ToDisplayText(), Synonyms = new List<string> { "scherzl" } },
-                    new Choice { Value = BreadKind.Semmoe.ToDisplayText(), Synonyms = new List<string> { "semmel" } },
-                    new Choice { Value = BreadKind.Soizgebaeck.ToDisplayText(), Synonyms = new List<string> { "salzgebäck" } }
+                    new Choice { Value = BreadKind.Schwoazbrot.ToDisplayText(), Synonyms = Resource.BreadKindSchwoazbrotSynonyms.Split(',').ToList() },
+                    new Choice { Value = BreadKind.Scherzl.ToDisplayText(), Synonyms = Resource.BreadKindScherzlSynonyms.Split(',').ToList() },
+                    new Choice { Value = BreadKind.Semmoe.ToDisplayText(), Synonyms = Resource.BreadKindSemmoeSynonyms.Split(',').ToList() },
+                    new Choice { Value = BreadKind.Soizgebaeck.ToDisplayText(), Synonyms = Resource.BreadKindSoizgebaeckSynonyms.Split(',').ToList() }
                 };
 
                 return new PromptOptions
                 {
-                    Prompt = MessageFactory.Text("Wöches Brot?"),
+                    Prompt = MessageFactory.Text(Resource.WhichBread),
                     Choices = choices,
-                    RetryPrompt = MessageFactory.Text(IDidNotUnderstandYou)
+                    RetryPrompt = MessageFactory.Text(Resource.IDidNotUnderstandYou)
                 };
             }
         }
@@ -213,16 +213,16 @@ namespace FragenZurWurst.Dialogs
             {
                 var choices = new List<Choice>
                 {
-                    new Choice { Value = Side.Gurkel.ToDisplayText(), Synonyms = new List<string> { "gurken" } },
-                    new Choice { Value = Side.Pfeffaroni.ToDisplayText(), Synonyms = new List<string> { "pfeffaroni" } },
-                    new Choice { Value = Side.Nix.ToDisplayText(), Synonyms = new List<string> { "nichts", "keine", "nein" } }
+                    new Choice { Value = Side.Gurkel.ToDisplayText(), Synonyms = Resource.SideGurkelSynonyms.Split(',').ToList() },
+                    new Choice { Value = Side.Pfeffaroni.ToDisplayText(), Synonyms = Resource.SidePfeffaroniSynonyms.Split(',').ToList() },
+                    new Choice { Value = Side.Nix.ToDisplayText(), Synonyms = Resource.SideNixSynonyms.Split(',').ToList() }
                 };
 
                 return new PromptOptions
                 {
-                    Prompt = MessageFactory.Text("Wöcha Beiloag?"),
+                    Prompt = MessageFactory.Text(Resource.WhichSide),
                     Choices = choices,
-                    RetryPrompt = MessageFactory.Text(IDidNotUnderstandYou)
+                    RetryPrompt = MessageFactory.Text(Resource.IDidNotUnderstandYou)
                 };
             }
         }

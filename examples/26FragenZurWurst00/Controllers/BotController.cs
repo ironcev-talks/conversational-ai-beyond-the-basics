@@ -3,10 +3,12 @@
 //
 // Generated with Bot Builder V4 SDK Template for Visual Studio EchoBot v4.5.0
 
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
+using Microsoft.Extensions.Configuration;
 
 namespace FragenZurWurst.Controllers
 {
@@ -20,15 +22,21 @@ namespace FragenZurWurst.Controllers
         private readonly IBotFrameworkHttpAdapter Adapter;
         private readonly IBot Bot;
 
-        public BotController(IBotFrameworkHttpAdapter adapter, IBot bot)
+        public BotController(IBotFrameworkHttpAdapter adapter, IBot bot, IConfiguration configuration)
         {
             Adapter = adapter;
             Bot = bot;
+            Configuration = configuration;
         }
+
+        public IConfiguration Configuration { get; }
 
         [HttpPost]
         public async Task PostAsync()
         {
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Configuration.GetValue<string>("Culture"));
+            Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
+
             // Delegate the processing of the HTTP POST to the adapter.
             // The adapter will invoke the bot.
             await Adapter.ProcessAsync(Request, Response, Bot);

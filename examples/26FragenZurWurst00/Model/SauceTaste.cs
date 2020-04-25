@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Resources;
+using System;
 
 namespace FragenZurWurst.Model
 {
@@ -14,23 +15,27 @@ namespace FragenZurWurst.Model
         {
             return sauceTaste switch
             {
-                SauceTaste.Siass => "Siaß",
+                SauceTaste.Siass => Resource.SauceTasteSiass,
+                SauceTaste.Schoaf => Resource.SauceTasteSchoaf,
                 _ => sauceTaste.ToString()
             };
         }
 
         public static string ToOrderSentenceText(this SauceTaste sauceTaste)
         {
-            return ToDisplayText(sauceTaste).ToLower();
+            return sauceTaste switch
+            {
+                SauceTaste.Siass => Resource.SauceTasteSiassOrderSentenceText,
+                SauceTaste.Schoaf => Resource.SauceTasteSchoafOrderSentenceText,
+                _ => sauceTaste.ToString()
+            };
         }
 
         public static SauceTaste FromDisplayText(string displayText)
         {
-            return displayText switch
-            {
-                "Siaß" => SauceTaste.Siass,
-                _ => Enum.Parse<SauceTaste>(displayText, true)
-            };
+            if (displayText == Resource.SauceTasteSiass) return SauceTaste.Siass;
+            if (displayText == Resource.SauceTasteSchoaf) return SauceTaste.Schoaf;
+            return Enum.Parse<SauceTaste>(displayText, true);
         }
     }
 }

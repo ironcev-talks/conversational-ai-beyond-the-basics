@@ -1,4 +1,6 @@
-﻿namespace FragenZurWurst.Model
+﻿using Resources;
+
+namespace FragenZurWurst.Model
 {
     internal class Order
     {
@@ -12,13 +14,13 @@
 
         public string ToOrderSentence()
         {
-            return $"Also, eine {SausageKind.ToOrderSentenceText()}, " +
+            return $"{Resource.OrderSentenceBegin} {SausageKind.ToOrderSentenceText()}, " +
                    $"{CutKind.ToOrderSentenceText()}, " +
-                   $"mit {Sauce.ToOrderSentenceText()}. " +
-                   $"{Sauce.ToOrderSentenceText()} {SauceTaste.ToOrderSentenceText()} und {SaucePosition.ToOrderSentenceText()}. " +
-                   $"Dazu {BreadKind.ToOrderSentenceText()} " +
-                   $"{(Side == Side.Nix ? "ohne ana Beiloag." : $"mit {Side.ToOrderSentenceText()}.")} " +
-                   $"Passt's so?";
+                   $"{Sauce.ToOrderSentenceTextDativ()}. " +
+                   $"{Sauce.ToOrderSentenceTextNominativ()} {SauceTaste.ToOrderSentenceText()} {Resource.OrderSentenceAnd} {SaucePosition.ToOrderSentenceText()}. " +
+                   $"{Resource.OrderSentenceWith} {BreadKind.ToOrderSentenceText()} " +
+                   $"{Side.ToOrderSentenceText()}. " +
+                   $"{Resource.OrderSentenceIsItFineLikeThat}";
         }
     }
 }

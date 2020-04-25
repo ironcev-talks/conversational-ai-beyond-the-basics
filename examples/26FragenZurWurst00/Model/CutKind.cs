@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Resources;
+using System;
 
 namespace FragenZurWurst.Model
 {
@@ -15,9 +16,9 @@ namespace FragenZurWurst.Model
         {
             return cutKind switch
             {
-                CutKind.Aufschneiden => "Aufschneiden",
-                CutKind.ZwaHoeften => "Zwa Höften",
-                CutKind.ImGonzn => "Im Gonzn",
+                CutKind.Aufschneiden => Resource.CutKindAufschneiden,
+                CutKind.ZwaHoeften => Resource.CutKindZwaHoeften,
+                CutKind.ImGonzn => Resource.CutKindImGonzn,
                 _ => cutKind.ToString()
             };
         }
@@ -26,22 +27,19 @@ namespace FragenZurWurst.Model
         {
             return cutKind switch
             {
-                CutKind.Aufschneiden => "aufgeschnitten",
-                CutKind.ZwaHoeften => "in zwa Höften",
-                CutKind.ImGonzn => "im Gonzn",
+                CutKind.Aufschneiden => Resource.CutKindAufschneidenOrderSentenceText,
+                CutKind.ZwaHoeften => Resource.CutKindZwaHoeftenOrderSentenceText,
+                CutKind.ImGonzn => Resource.CutKindImGonznOrderSentenceText,
                 _ => cutKind.ToString()
             };
         }
 
         public static CutKind FromDisplayText(string displayText)
         {
-            return displayText switch
-            {
-                "Aufschneiden" => CutKind.Aufschneiden,
-                "Zwa Höften" => CutKind.ZwaHoeften,
-                "Im Gonzn" => CutKind.ImGonzn,
-                _ => Enum.Parse<CutKind>(displayText, true)
-            };
+            if (displayText == Resource.CutKindAufschneiden) return CutKind.Aufschneiden;
+            if (displayText == Resource.CutKindZwaHoeften) return CutKind.ZwaHoeften;
+            if (displayText == Resource.CutKindImGonzn) return CutKind.ImGonzn;
+            return Enum.Parse<CutKind>(displayText, true);
         }
     }
 }

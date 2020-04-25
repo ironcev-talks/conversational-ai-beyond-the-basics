@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Resources;
+using System;
 
 namespace FragenZurWurst.Model
 {
@@ -16,8 +17,10 @@ namespace FragenZurWurst.Model
         {
             return breadKind switch
             {
-                BreadKind.Semmoe => "Semmö",
-                BreadKind.Soizgebaeck => "Soizgebäck",
+                BreadKind.Schwoazbrot => Resource.BreadKindSchwoazbrot,
+                BreadKind.Scherzl => Resource.BreadKindScherzl,
+                BreadKind.Semmoe => Resource.BreadKindSemmoe,
+                BreadKind.Soizgebaeck => Resource.BreadKindSoizgebaeck,
                 _ => breadKind.ToString()
             };
         }
@@ -26,20 +29,21 @@ namespace FragenZurWurst.Model
         {
             return breadKind switch
             {
-                BreadKind.Semmoe => "eine Semmö",
-                BreadKind.Soizgebaeck => "ein Soizgebäck",
-                _ => "ein " + breadKind.ToString()
+                BreadKind.Schwoazbrot => Resource.BreadKindSchwoazbrotOrderSentenceText,
+                BreadKind.Scherzl => Resource.BreadKindScherzlOrderSentenceText,
+                BreadKind.Semmoe => Resource.BreadKindSemmoeOrderSentenceText,
+                BreadKind.Soizgebaeck => Resource.BreadKindSoizgebaeckOrderSentenceText,
+                _ => breadKind.ToString()
             };
         }
 
         public static BreadKind FromDisplayText(string displayText)
         {
-            return displayText switch
-            {
-                "Semmö" => BreadKind.Semmoe,
-                "Soizgebäck" => BreadKind.Soizgebaeck,
-                _ => Enum.Parse<BreadKind>(displayText, true)
-            };
+            if (displayText == Resource.BreadKindSchwoazbrot) return BreadKind.Schwoazbrot;
+            if (displayText == Resource.BreadKindScherzl) return BreadKind.Scherzl;
+            if (displayText == Resource.BreadKindSemmoe) return BreadKind.Semmoe;
+            if (displayText == Resource.BreadKindSoizgebaeck) return BreadKind.Soizgebaeck;
+            return Enum.Parse<BreadKind>(displayText, true);
         }
     }
 }

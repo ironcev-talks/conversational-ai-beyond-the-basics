@@ -5,13 +5,12 @@ using FragenZurWurst.CognitiveModels;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Resources;
 
 namespace FragenZurWurst.Dialogs
 {
     public class ChangeOrderDialog : InterruptableDialog
     {
-        private const string IDidNotUnderstandYou = "I hob di net goanz verstoandn.";
-
         private readonly ConversationState conversationState;
         private readonly IFragenZurWurstRecognizer recognizer;
         private readonly OrderingDialog orderingDialog;
@@ -41,7 +40,7 @@ namespace FragenZurWurst.Dialogs
 
         private async Task<DialogTurnResult> AskForOrderChangeStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            string question = "Woas meachat'ns oanders hob'n?";
+            string question = Resource.WhatEleseWouldYouLikeToHave;
 
             var promptMessage = MessageFactory.Text(question, question, InputHints.ExpectingInput);
             return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
@@ -59,7 +58,7 @@ namespace FragenZurWurst.Dialogs
             }
             else
             {
-                var message = MessageFactory.Text(IDidNotUnderstandYou, IDidNotUnderstandYou, InputHints.IgnoringInput);
+                var message = MessageFactory.Text(Resource.IDidNotUnderstandYou, Resource.IDidNotUnderstandYou, InputHints.IgnoringInput);
                 await stepContext.Context.SendActivityAsync(message, cancellationToken);
 
                 return await stepContext.ReplaceDialogAsync(nameof(ChangeOrderDialog), order, cancellationToken);

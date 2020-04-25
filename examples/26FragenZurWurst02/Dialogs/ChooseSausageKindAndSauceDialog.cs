@@ -4,6 +4,7 @@ using FragenZurWurst.Model;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Resources;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,8 +12,6 @@ namespace FragenZurWurst.Dialogs
 {
     public class ChooseSausageKindAndSauceDialog : InterruptableDialog
     {
-        private const string IDidNotUnderstandYou = "I hob di net goanz verstoandn.";
-
         private readonly ConversationState conversationState;
         private readonly IFragenZurWurstRecognizer recognizer;
 
@@ -41,9 +40,9 @@ namespace FragenZurWurst.Dialogs
 
             string question = string.Empty;
             if (!order.SausageKind.HasValue)
-                question += "Wöcha Wurscht?";
+                question += Resource.WhichSausage;
             if (!order.Sauce.HasValue)
-                question += " Wöcha Sauce?";
+                question += " " + Resource.WhichSauce;
             question = question.Trim();
 
             var promptMessage = MessageFactory.Text(question, question, InputHints.ExpectingInput);
@@ -56,7 +55,7 @@ namespace FragenZurWurst.Dialogs
 
             if (!result.IsSpecifyOrderIntent)
             {
-                var message = MessageFactory.Text(IDidNotUnderstandYou, IDidNotUnderstandYou, InputHints.IgnoringInput);
+                var message = MessageFactory.Text(Resource.IDidNotUnderstandYou, Resource.IDidNotUnderstandYou, InputHints.IgnoringInput);
                 await stepContext.Context.SendActivityAsync(message, cancellationToken);
 
                 return await stepContext.ReplaceDialogAsync(nameof(ChooseSausageKindAndSauceDialog), (Order)stepContext.Options, cancellationToken);

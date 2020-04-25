@@ -127,7 +127,8 @@
     <value>Hrenovku</value>
   </data>
   <data name="SausageKindBurenSynonyms" xml:space="preserve">
-    <value>hrenovke,hrenovku,hrenovka</value>
+    <value>hrenovke,hrenovku,hrenovka
+</value>
   </data>
   <data name="SausageKindKaesekrainer" xml:space="preserve">
     <value>Kranjsku</value>
@@ -368,5 +369,17 @@
   </data>
   <data name="ThankYouYourOrderIsReady" xml:space="preserve">
     <value>Hvala lipa! Tu ti j' tvoja kobasica. Ako biš još ča naručil, reci.</value>
+  </data>
+  <data name="CancelOrderConfirmation" xml:space="preserve">
+    <value>Ča nisi danas raspoložen za kobasice? Ni problem, dojdi drugi put.</value>
+  </data>
+  <data name="CancelOrderSynonyms" xml:space="preserve">
+    <value>odustajem,neću ništa</value>
+  </data>
+  <data name="GetMenuSynonyms" xml:space="preserve">
+    <value>menu,meni,jelovnik</value>
+  </data>
+  <data name="MenuInformation" xml:space="preserve">
+    <value>Danas nudimo hrenovke, češnjovke, kranjske i safalade z senfon i kečapon i uz to kukumari i peveruni.</value>
   </data>
 </root>

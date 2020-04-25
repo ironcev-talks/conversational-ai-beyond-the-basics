@@ -153,6 +153,12 @@
   <data name="BreadKindSoizgebaeckSynonyms" xml:space="preserve">
     <value>soizgebäck,salzgebäck</value>
   </data>
+  <data name="CancelOrderConfirmation" xml:space="preserve">
+    <value>Heit ka Wurscht fia di? Ka Problem, bis zum nächstn moi!</value>
+  </data>
+  <data name="CancelOrderSynonyms" xml:space="preserve">
+    <value>abbrechen,breche ab</value>
+  </data>
   <data name="ConfirmOrder" xml:space="preserve">
     <value>ja,jo,passt,perfekt,super,gut,guat</value>
   </data>
@@ -186,11 +192,17 @@
   <data name="DeclineOrder" xml:space="preserve">
     <value>nein,ändern,anders</value>
   </data>
+  <data name="GetMenuSynonyms" xml:space="preserve">
+    <value>menü,speisekarte</value>
+  </data>
   <data name="IDidNotUnderstandYou" xml:space="preserve">
     <value>I hob di net goanz verstoandn.</value>
   </data>
   <data name="InitialGreeting" xml:space="preserve">
     <value>Seas! I bin CurryWursch26, wöltweit da beste Currywurscht-Bot! Ba mia koanst du a gschmackige Currywurscht b'stelln, natiarli mit Senf und oder Ketchup und Gurkerl oder Pfeffaroni.</value>
+  </data>
+  <data name="MenuInformation" xml:space="preserve">
+    <value>Heit gibt's Woidviertla, Buarn, Schoafe und Eitrige, mit Senf und Ketchup und dazua Gurkerl oda Pfeffaroni.</value>
   </data>
   <data name="OrderSentenceAnd" xml:space="preserve">
     <value>und</value>

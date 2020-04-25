@@ -2,7 +2,7 @@
 
 namespace FragenZurWurst.Model
 {
-    internal class Order
+    public class Order
     {
         public SausageKind SausageKind { get; set; }
         public CutKind CutKind { get; set; }

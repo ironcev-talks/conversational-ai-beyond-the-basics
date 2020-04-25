@@ -4,6 +4,7 @@ using FragenZurWurst.CognitiveModels;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Resources;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,8 +12,6 @@ namespace FragenZurWurst.Dialogs
 {
     public class OrderingDialog : InterruptableDialog
     {
-        private const string IDidNotUnderstandYou = "I hob di net goanz verstoandn.";
-
         private readonly ConversationState conversationState;
         private readonly IFragenZurWurstRecognizer recognizer;
         private readonly ChooseSausageKindAndSauceDialog chooseSausageKindAndSauceDialog;
@@ -81,7 +80,7 @@ namespace FragenZurWurst.Dialogs
                 return await stepContext.ReplaceDialogAsync(changeOrderDialog.Id, order, cancellationToken);
             }
 
-            var message = MessageFactory.Text(IDidNotUnderstandYou, IDidNotUnderstandYou, InputHints.IgnoringInput);
+            var message = MessageFactory.Text(Resource.IDidNotUnderstandYou, Resource.IDidNotUnderstandYou, InputHints.IgnoringInput);
             await stepContext.Context.SendActivityAsync(message, cancellationToken);
 
             return await stepContext.ReplaceDialogAsync(nameof(OrderingDialog), order, cancellationToken);

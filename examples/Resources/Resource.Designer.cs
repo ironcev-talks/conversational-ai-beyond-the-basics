@@ -169,6 +169,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Heit ka Wurscht fia di? Ka Problem, bis zum nächstn moi!.
+        /// </summary>
+        public static string CancelOrderConfirmation {
+            get {
+                return ResourceManager.GetString("CancelOrderConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to abbrechen,breche ab.
+        /// </summary>
+        public static string CancelOrderSynonyms {
+            get {
+                return ResourceManager.GetString("CancelOrderSynonyms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ja,jo,passt,perfekt,super,gut,guat.
         /// </summary>
         public static string ConfirmOrder {
@@ -268,6 +286,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to menü,speisekarte.
+        /// </summary>
+        public static string GetMenuSynonyms {
+            get {
+                return ResourceManager.GetString("GetMenuSynonyms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I hob di net goanz verstoandn..
         /// </summary>
         public static string IDidNotUnderstandYou {
@@ -282,6 +309,15 @@ namespace Resources {
         public static string InitialGreeting {
             get {
                 return ResourceManager.GetString("InitialGreeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heit gibt&apos;s Woidviertla, Buarn, Schoafe und Eitrige, mit Senf und Ketchup und dazua Gurkerl oda Pfeffaroni..
+        /// </summary>
+        public static string MenuInformation {
+            get {
+                return ResourceManager.GetString("MenuInformation", resourceCulture);
             }
         }
         

@@ -4,14 +4,12 @@ using FragenZurWurst.CognitiveModels;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Resources;
 
 namespace FragenZurWurst.Dialogs
 {
     public abstract class InterruptableDialog : ComponentDialog
     {
-        private const string MenuInformation = "Heit gibt's Woidviertla, Buarn, Schoafe und Eitrige, mit Senf und Ketchup und dazua Gurkerl oda Pfeffaroni.";
-        private const string CancelOrderConfirmation = "Heit ka Wurscht fia di? Ka Problem, bis zum nächstn moi!";
-
         private readonly ConversationState conversationState;
         private readonly IFragenZurWurstRecognizer recognizer;
 
@@ -38,14 +36,14 @@ namespace FragenZurWurst.Dialogs
 
             if (result.IsGetMenuInformationIntent)
             {
-                var message = MessageFactory.Text(MenuInformation, MenuInformation, InputHints.ExpectingInput);
+                var message = MessageFactory.Text(Resource.MenuInformation, Resource.MenuInformation, InputHints.ExpectingInput);
                 await innerDc.Context.SendActivityAsync(message, cancellationToken);
                 return new DialogTurnResult(DialogTurnStatus.Waiting);
             }
 
             if (result.IsCancelOrderIntent)
             {
-                var cancelMessage = MessageFactory.Text(CancelOrderConfirmation, CancelOrderConfirmation, InputHints.IgnoringInput);
+                var cancelMessage = MessageFactory.Text(Resource.CancelOrderConfirmation, Resource.CancelOrderConfirmation, InputHints.IgnoringInput);
                 await innerDc.Context.SendActivityAsync(cancelMessage, cancellationToken);
                 await conversationState.ClearStateAsync(innerDc.Context, cancellationToken);
                 return await innerDc.CancelAllDialogsAsync(cancellationToken);
